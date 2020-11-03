@@ -10,7 +10,7 @@
           id="username"
           class="login__username"
           v-model="userName">
-        <label for="username">Password</label>
+        <label for="password">Password</label>
         <input
           type="password"
           autocomplete="off"
