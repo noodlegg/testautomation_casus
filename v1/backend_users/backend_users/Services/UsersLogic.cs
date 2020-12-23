@@ -5,7 +5,6 @@ using backend_users.Repository;
 using backend_users.Repository.Models;
 using backend_users.Services.Extensions;
 using backend_users.ViewModels;
-using Microsoft.AspNetCore.Server.Kestrel.Core;
 
 namespace backend_users.Services
 {
@@ -95,10 +94,7 @@ namespace backend_users.Services
 
         public void UpdateUser(UpdateSingleUser user, int id)
         {
-            if (id != null)
-            {
-                this.CheckIfUserExists(id);
-            }
+            this.CheckIfUserExists(id);
 
             var userToUpdate = this._userRepository.GetSingleUser(id);
             userToUpdate.Active = user.Active;
@@ -108,11 +104,7 @@ namespace backend_users.Services
 
         public void DeleteUser(int id)
         {
-            if (id != null)
-            {
-                this.CheckIfUserExists(id);
-            }
-            
+            this.CheckIfUserExists(id);
             var userToDelete = this._userRepository.GetSingleUser(id);
 
             if (userToDelete.Active)
@@ -124,7 +116,6 @@ namespace backend_users.Services
         
         public bool CheckIfPassWordIsCorrect(ValidateUser validate)
         {
-            bool validPassword = false;
             CheckIfUserExists(validate.UserName);
             var userFromDatabase = _userRepository.GetSingleUser(validate.UserName);
 
