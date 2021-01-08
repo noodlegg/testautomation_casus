@@ -11,7 +11,7 @@ export default new Vuex.Store({
     token: '',
     userId: null,
     userName: null,
-    proxyUrl: process.env.ROOT_PROXY_API,
+    proxyUrl: process.env.VUE_APP_ROOT_PROXY_API,
     loginUri: '/v1/proxy/tokens/',
     usersUri: '/v1/proxy/users/',
     moviesUri: '/v1/proxy/movies/',
