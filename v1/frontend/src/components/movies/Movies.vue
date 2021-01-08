@@ -6,15 +6,20 @@
       <search-movie class="search-movie" v-model="searchValue" v-if="loggedIn"></search-movie>
     </section>
     <main class="movies">
-      <ul>
-        <movie-item v-if="!searchValue"
-                    v-for="(movie, index) in getMovies"
-                    :key="index" :movie="movie"></movie-item>
-        <movie-item v-if="searchValue && getSearchedMovies.length > 0"
-                    v-for="(searchedMovie, index) in getSearchedMovies"
+      <div v-if="searchValue && getSearchedMovies.length > 0">
+        <ul>
+        <movie-item v-for="(searchedMovie, index) in getSearchedMovies"
                     :key="index" :movie="searchedMovie"></movie-item>
-      </ul>
-      <div v-if="searchValue && getSearchedMovies.length === 0">No search results!</div>
+        </ul>
+      </div>
+      <div v-else-if="searchValue && getSearchedMovies.length === 0">
+        No search results!
+      </div>
+      <div v-else>
+        <ul>
+          <movie-item v-for="(movie, index) in getMovies" :key="index" :movie="movie"></movie-item>
+        </ul>
+      </div>
     </main>
   </div>
 </template>
@@ -23,8 +28,9 @@
 /* eslint-disable func-names */
 /* eslint-disable object-shorthand */
 import { mapGetters, mapActions } from 'vuex';
-import SearchMovie from '../generic/SearchMovie';
-import MovieItem from './MovieItem';
+import SearchMovie from '../generic/SearchMovie.vue';
+import MovieItem from './MovieItem.vue';
+
 export default {
   name: 'Movies',
   data() {
@@ -74,4 +80,3 @@ export default {
   }
 
 </style>
-
