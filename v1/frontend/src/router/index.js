@@ -1,14 +1,14 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import MovieDetail from '@/components/movies/MovieDetail';
-import Movies from '@/components/movies/Movies';
-import Home from '@/components/movies/Home';
-import Login from '@/components/users/Login';
-import LoginFailed from '@/components/users/LoginFailed';
-import Logout from '@/components/users/Logout';
-import SignUp from '@/components/users/SignUp';
-import SignUpSuccess from '@/components/users/SignUpSuccess';
-import Profile from '@/components/users/Profile';
+import MovieDetail from '@/components/movies/MovieDetail.vue';
+import Movies from '@/components/movies/Movies.vue';
+import Home from '@/components/movies/Home.vue';
+import Login from '@/components/users/Login.vue';
+import LoginFailed from '@/components/users/LoginFailed.vue';
+import Logout from '@/components/users/Logout.vue';
+import SignUp from '@/components/users/SignUp.vue';
+import SignUpSuccess from '@/components/users/SignUpSuccess.vue';
+import Profile from '@/components/users/Profile.vue';
 import store from '../store/store';
 
 Vue.use(Router);
@@ -69,7 +69,7 @@ const router = new Router({
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.matched.some(record => record.meta.requiresAuth)) {
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
     if (store.getters.loggedIn) {
       next();
       return;

@@ -6,7 +6,7 @@
       <h3>{{currentMovie.title}}</h3>
     </section>
     <main class="movies">
-      <img :src="currentMovie.image"/>
+      <img alt="movie image" :src="currentMovie.image"/>
       <dl>
         <dt>Title</dt>
         <dd>{{currentMovie.title}}</dd>
@@ -22,6 +22,7 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
+
 export default {
   data() {
     return {

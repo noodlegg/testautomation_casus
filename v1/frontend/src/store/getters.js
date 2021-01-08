@@ -1,7 +1,7 @@
 export default {
-  token: state => state.token,
-  loggedIn: state => state.loggedIn,
-  currentMovie: state => state.currentMovie,
+  token: (state) => state.token,
+  loggedIn: (state) => state.loggedIn,
+  currentMovie: (state) => state.currentMovie,
   /* eslint-disable */
   currentUser: (state) => {
     return {

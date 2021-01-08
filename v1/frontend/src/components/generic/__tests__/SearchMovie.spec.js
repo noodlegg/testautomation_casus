@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import SearchMovie from '../SearchMovie';
+import SearchMovie from '../SearchMovie.vue';
 
 describe('Item.vue', () => { // #A
   test('value of parent is bound as model', () => {

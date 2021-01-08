@@ -45,10 +45,10 @@ export default {
   },
   computed: {
     canSubmit() {
-      return (this.confirmPassword === this.password) &&
-        !!this.password &&
-        !!this.confirmPassword &&
-        (this.userName.length > 3);
+      return (this.confirmPassword === this.password)
+        && !!this.password
+        && !!this.confirmPassword
+        && (this.userName.length > 3);
     },
   },
   methods: {
