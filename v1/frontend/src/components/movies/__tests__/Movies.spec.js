@@ -2,7 +2,7 @@ import { createLocalVue } from '@vue/test-utils';
 import Vuex from 'vuex';
 import VueRouter from 'vue-router';
 // import Movies from '../Movies';
-import Header from '../../generic/Header';
+import Header from '../../generic/Header.vue';
 
 const localVue = createLocalVue();
 localVue.use(Vuex);
@@ -27,4 +27,3 @@ describe('Movies.vue', () => {
   test('shows search bar when logged in', () => {
   });
 });
-

@@ -1,7 +1,7 @@
 import { createLocalVue, shallowMount } from '@vue/test-utils';
 import Vuex from 'vuex';
 import VueRouter from 'vue-router';
-import Header from '../Header';
+import Header from '../Header.vue';
 
 const localVue = createLocalVue();
 localVue.use(Vuex);

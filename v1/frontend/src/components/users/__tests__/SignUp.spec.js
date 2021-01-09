@@ -1,8 +1,8 @@
 import { createLocalVue, shallowMount } from '@vue/test-utils';
 import Vuex from 'vuex';
 import VueRouter from 'vue-router';
-import SignUp from '../SignUp';
-import Header from '../../generic/Header';
+import SignUp from '../SignUp.vue';
+import Header from '../../generic/Header.vue';
 
 const localVue = createLocalVue();
 localVue.use(Vuex);
@@ -44,4 +44,3 @@ describe('SignUp.vue', () => {
   test('When logged in with role user this page is not visible', () => {
   });
 });
-
